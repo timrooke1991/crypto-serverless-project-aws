@@ -24,7 +24,7 @@ Resources:
             Path: /
             Method: get
 
-  GetHelloWorld:
+  GetCurrency:
     Type: AWS::Serverless::Function
     Properties:
       Handler: currency.get
