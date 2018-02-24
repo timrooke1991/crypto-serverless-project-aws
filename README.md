@@ -8,7 +8,7 @@ What's Here
 
 This sample includes:
 
-* README.md - this file
+* README.md - this file - needs updating
 * buildspec.yml - this file is used by AWS CodeBuild to package your
   application for deployment to AWS Lambda
 * index.js - this file contains the sample Node.js code for the web service
