@@ -2,10 +2,10 @@
 var fs = require('fs');
 
  exports.get = function(event, context) {
-   var contents = fs.readFileSync("public/currency.html");
+   var contents = fs.readFileSync("public/index.html");
 
 
-   var html = `<p>Hello ${event}</p>`
+   var html = `<p>Hello Tim</p>`
 
 
    context.succeed({
