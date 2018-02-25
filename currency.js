@@ -1,5 +1,6 @@
 'use strict';
 var fs = require('fs');
+var request = require('request');
 
 
  exports.get = function(event, context) {
@@ -7,14 +8,28 @@ var fs = require('fs');
 
    // load pass API data into it
 
-   var html = `<h1>${event.pathParameters.currency}</h1>`;
+   var ticker = event.pathParameters.currency;
 
+   request({
+     url: `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`,
+     method: 'GET',
+     headers: {
+       Accept: 'application/json',
+       'Content-Type': 'application/json'
+     }
+   }, function (error, response, body) {
 
-   context.succeed({
-     statusCode: 200,
-     // body: contents.toString(),
-     body: html,
-     headers: {'Content-Type': 'text/html'}
+     console.log('error: '+ response.statusCode);
+     console.log('response: '+ response);
+     console.log(body);
+     var html = `<h1>${response['DISPLAY']['BTC']['USD']['MARKET']}</h1>`;
+
+     context.succeed({
+       statusCode: 200,
+       // body: contents.toString(),
+       body: html,
+       headers: {'Content-Type': 'text/html'}
+     });
    });
  };
 
