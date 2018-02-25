@@ -3,19 +3,18 @@ var fs = require('fs');
 
 
  exports.get = function(event, context) {
-   var contents = fs.readFileSync("public/index.html");
+   // var contents = fs.readFileSync("public/index.html");
 
    // load pass API data into it
 
-   // var html = `<p>Hello ${event.pathParameter.currency}</p>`;
-   var json = event;
+   var html = `<pre>${event}</pre>`;
 
 
    context.succeed({
      statusCode: 200,
      // body: contents.toString(),
-     body: json,
-     headers: {'Content-Type': 'application/json'}
+     body: html,
+     headers: {'Content-Type': 'text/html'}
    });
  };
 
