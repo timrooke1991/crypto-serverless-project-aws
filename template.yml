@@ -36,5 +36,5 @@ Resources:
         GetEvent:
           Type: Api
           Properties:
-            Path: /currency
+            Path: /{currency}
             Method: get
