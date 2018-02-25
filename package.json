@@ -1,0 +1,24 @@
+{
+  "name": "crypto-serverless-project",
+  "version": "1.0.0",
+  "description": "Welcome to the AWS CodeStar sample web application ==================================================",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.83.0",
+    "serverless-offline": "^3.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timrooke1991/Crypto-Serverless-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timrooke1991/Crypto-Serverless-Project/issues"
+  },
+  "homepage": "https://github.com/timrooke1991/Crypto-Serverless-Project#readme"
+}
