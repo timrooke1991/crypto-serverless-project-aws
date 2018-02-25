@@ -7,14 +7,15 @@ var fs = require('fs');
 
    // load pass API data into it
 
-   var html = `<p>Hello ${event.pathParameter.currency}</p>`;
+   // var html = `<p>Hello ${event.pathParameter.currency}</p>`;
+   var json = event;
 
 
    context.succeed({
      statusCode: 200,
      // body: contents.toString(),
-     body: html,
-     headers: {'Content-Type': 'text/html'}
+     body: json,
+     headers: {'Content-Type': 'application/json'}
    });
  };
 
