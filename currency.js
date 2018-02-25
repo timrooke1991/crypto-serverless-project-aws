@@ -7,7 +7,7 @@ var fs = require('fs');
 
    // load pass API data into it
 
-   var html = `<h1>${event.pathParameters}</h1>`;
+   var html = `<h1>${event.pathParameters.currency}</h1>`;
 
 
    context.succeed({
