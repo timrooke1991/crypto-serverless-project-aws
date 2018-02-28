@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs');
 var request = require('request');
+var rp = require('request-promise');
 
 
 exports.get = function(event, context) {
@@ -10,36 +11,20 @@ exports.get = function(event, context) {
 
   var ticker = event.pathParameters.currency;
 
-  // ERROR - can not find request
-  request({
-    url: `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`,
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    }
-  }, function (error, response, body) {
-
-    console.log('error: '+ response.statusCode);
-    console.log('response: '+ response);
-    console.log(body);
-    var html = `<h1>${response['DISPLAY']['BTC']['USD']['MARKET']}</h1>`;
-
-    context.succeed({
-      statusCode: 200,
-      // body: contents.toString(),
-      body: html,
-      headers: {'Content-Type': 'text/html'}
+  rp('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD')
+    .then(function (response) {
+      var html = `<h1>${response['DISPLAY']['BTC']['USD']['MARKET']}</h1>`;
+      console.log('response', response);
+      context.succeed({
+        statusCode: 200,
+        body: html,
+        headers: {'Content-Type': 'text/html'}
+      });
+    })
+    .catch(function (err) {
+      console.log('error: ', err);
     });
-  });
 
-  // var html = `<h1>${ticker}</h1>`;
-  // context.succeed({
-  //   statusCode: 200,
-  //   // body: contents.toString(),
-  //   body: html,
-  //   headers: {'Content-Type': 'text/html'}
-  // });
 };
 
 // A function to grab key typed by the user
