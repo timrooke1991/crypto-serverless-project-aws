@@ -11,7 +11,7 @@ exports.get = function(event, context) {
 
   var ticker = event.pathParameters.currency;
 
-  rp('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD')
+  rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
     .then(function (response) {
       var html = `<h1>${response['DISPLAY']['BTC']['USD']['MARKET']}</h1>`;
       console.log('response', response);
