@@ -13,11 +13,10 @@ exports.get = function(event, context) {
 
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
     .then(function (response) {
-      var html = `<h1>${ticker}</h1>`;
-      console.log('response', response);
+      // var html = `<h1>${ticker}</h1>`;
       context.succeed({
         statusCode: 200,
-        body: html,
+        body: JSON.stringify(response),
         headers: {'Content-Type': 'text/html'}
       });
     })
