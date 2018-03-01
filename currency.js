@@ -13,12 +13,13 @@ exports.get = function(event, context) {
 
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
     .then(function (response) {
-      var json = JSON.stringify(response.responseJSON['DISPLAY']['BTC']['USD']['MARKET']);
-      // var html = `<h1></h1>`;
-      // console.log('response', response);
+
+      //  var json = JSON.stringify(response['DISPLAY']['BTC']['USD']['MARKET']);
+      // var html = `<h1>JSON.stringify(response.['DISPLAY']['BTC']['USD']['MARKET']</h1>`;
+
       context.succeed({
         statusCode: 200,
-        body: json,
+        body: JSON.stringify(response),
         headers: {'Content-Type': 'text/html'}
       });
     })
