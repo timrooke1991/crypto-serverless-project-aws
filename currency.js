@@ -12,7 +12,6 @@ exports.get = function(event, context) {
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
     .then(function (response) {
       var json = JSON.parse(response);
-
       var html = `
       <!DOCTYPE html>
       <html lang="en">
@@ -21,8 +20,8 @@ exports.get = function(event, context) {
           <meta charset="utf-8">
           <title>Crypto app</title>
           <meta name="description" content="" />
-          <link href="/assets/css/styles.css" rel="stylesheet">
-          <link href="/assets/css/gradients.css" rel="stylesheet">
+          <link href="public/assets/css/styles.css" rel="stylesheet">
+          <link href="public/assets/css/gradients.css" rel="stylesheet">
       </head>
 
       <body class="">
