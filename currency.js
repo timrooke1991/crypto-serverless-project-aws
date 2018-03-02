@@ -11,13 +11,23 @@ exports.get = function(event, context) {
 
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
     .then(function (response) {
-
-
       var json = JSON.parse(response);
-      var html = `<h1>${json['DISPLAY']['BTC']['USD']['MARKET']}</h1>`;
 
-      console.log('response', response);
-      console.log('market', json['DISPLAY']['BTC']['USD']['MARKET']);
+      var html = `
+      <li class="tile-case">
+        <a href="#">
+          <div class="tile-primary-content">
+            <h1>${json['DISPLAY']['BTC']['USD']['FROMSYMBOL']}</h1>
+            <p>${json['RAW']['BTC']['USD']['FROMSYMBOL']}</p>
+          </div>
+          <div class="tile-secondary-content">
+            <h2>${json['DISPLAY']['BTC']['USD']['PRICE']}</h2>
+            <p>${json['RAW']['BTC']['USD']['FROMSYMBOL']}</p>
+          </div>
+          </a>
+        </li>
+      </ul>
+      `;
 
       context.succeed({
         statusCode: 200,
@@ -30,6 +40,3 @@ exports.get = function(event, context) {
     });
 
 };
-
-// A function to grab key typed by the user
-//
