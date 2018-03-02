@@ -29,12 +29,12 @@ exports.get = function(event, context) {
         <li class="tile-case">
           <a href="#">
             <div class="tile-primary-content">
-              <h1>${json['DISPLAY']['BTC']['USD']['FROMSYMBOL']}</h1>
-              <p>${json['RAW']['BTC']['USD']['FROMSYMBOL']}</p>
+              <h1>${json['DISPLAY'][ticker]['USD']['FROMSYMBOL']}</h1>
+              <p>${json['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
             </div>
             <div class="tile-secondary-content">
-              <h2>${json['DISPLAY']['BTC']['USD']['PRICE']}</h2>
-              <p>${json['RAW']['BTC']['USD']['FROMSYMBOL']}</p>
+              <h2>${json['DISPLAY'][ticker]['USD']['PRICE']}</h2>
+              <p>${json['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
             </div>
           </a>
         </li>
