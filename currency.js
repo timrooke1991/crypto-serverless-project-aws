@@ -5,26 +5,26 @@ var rp = require('request-promise');
 
 
 exports.get = function(event, context) {
-  // var contents = fs.readFileSync("public/index.html");
 
-  // load pass API data into it
-
+  // Grabs ticker from URL
   var ticker = event.pathParameters.currency;
 
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
     .then(function (response) {
-
-      //  var json = JSON.stringify(response['DISPLAY']['BTC']['USD']['MARKET']);
-      // var html = `<h1>JSON.stringify(response.['DISPLAY']['BTC']['USD']['MARKET']</h1>`;
+      console.log('response', response);
+      console.log('market', json['DISPLAY']['BTC']['USD']['MARKET']);
+      
+      var json = JSON.parse(response);
+      var html = `<h1>${json['DISPLAY']['BTC']['USD']['MARKET']}</h1>`;
 
       context.succeed({
         statusCode: 200,
-        body: JSON.stringify(response),
+        body: html,
         headers: {'Content-Type': 'text/html'}
       });
     })
-    .catch(function (err) {
-      console.log('error: ', err);
+    .catch(function () {
+      console.log('error: ', context.error);
     });
 
 };
