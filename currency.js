@@ -14,6 +14,18 @@ exports.get = function(event, context) {
       var json = JSON.parse(response);
 
       var html = `
+      <!DOCTYPE html>
+      <html lang="en">
+
+      <head>
+          <meta charset="utf-8">
+          <title>Crypto app</title>
+          <meta name="description" content="" />
+          <link href="/assets/css/styles.css" rel="stylesheet">
+          <link href="/assets/css/gradients.css" rel="stylesheet">
+      </head>
+
+      <body class="">
       <ul>
         <li class="tile-case">
           <a href="#">
@@ -28,6 +40,8 @@ exports.get = function(event, context) {
           </a>
         </li>
       </ul>
+      </body>
+      </html>
       `;
 
       context.succeed({
@@ -36,8 +50,8 @@ exports.get = function(event, context) {
         headers: {'Content-Type': 'text/html'}
       });
     })
-    .catch(function () {
-      console.log('error: ', context.error);
+    .catch(function (err) {
+      console.log('error: ', err);
     });
 
 };
