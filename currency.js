@@ -25,7 +25,7 @@ exports.get = function(event, context) {
       </head>
 
       <body class="">
-      <ul>
+      <ul class="masonry-list">
         <li class="tile-case">
           <a href="#">
             <div class="tile-primary-content">
