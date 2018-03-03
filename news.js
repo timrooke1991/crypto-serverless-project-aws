@@ -2,6 +2,7 @@
 var fs = require('fs');
 var request = require('request');
 var rp = require('request-promise');
+import 'bulma/css/bulma.css';
 
  exports.get = function(event, context) {
 
