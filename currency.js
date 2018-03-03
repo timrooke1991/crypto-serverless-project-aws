@@ -33,25 +33,73 @@ exports.get = function(event, context) {
               <p>${json['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
             </div>
             <div class="tile-secondary-content">
-              <h2>${json['DISPLAY'][ticker]['USD']['PRICE']}</h2>
               <p>${json['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
+              <h2>${json['DISPLAY'][ticker]['USD']['PRICE']}</h2>
             </div>
           </a>
         </li>
-      </ul>
+        <li class="tile-job">
+          <a href="#">
+            <div class="tile-primary-content">
+              <h2>Market</h2>
+              <p>${json['DISPLAY'][ticker]['USD']['MARKET']}</p>
+            </div>
+            <div class="tile-secondary-content">
+              <p><small>SUPPLY</small>${json['DISPLAY'][ticker]['USD']['SUPPLY']}</p>
+              <p><small>MCAP</small>${json['DISPLAY'][ticker]['USD']['MKTCAP']}</p>
+              <p><small>${json['DISPLAY'][ticker]['USD']['LASTUPDATE']}</small></p>
+            </div>
+          </a>
+        </li>
+        <li class="tile-facebook">
+          <a href="#">
+            <div class="tile-primary-content">
+              <h2>24hr Trading</h2>
+              <p>${json['DISPLAY'][ticker]['USD']['CHANGE24HOUR']} | ${json['DISPLAY'][ticker]['USD']['CHANGEPCT24HOUR']}</p>
+            </div>
+            <div class="tile-secondary-content">
+              <p><small>OPEN</small>${json['DISPLAY'][ticker]['USD']['OPEN24HOUR']}</p>
+              <p><small>HIGH</small>${json['DISPLAY'][ticker]['USD']['HIGH24HOUR']}</p>
+              <p><small>LOW</small>${json['DISPLAY'][ticker]['USD']['LOW24HOUR']}</p>
+              <p><small>VOLUME</small>${json['DISPLAY'][ticker]['USD']['VOLUME24HOUR']}</p>
+            </div>
+          </a>
+        </li>
+        <li class="tile-twitter">
+          <a href="https://twitter.com/chrisgrabinski">
+            <div class="tile-primary-content">
+              <h2>Twitter</h2>
+              <p>@chrisgrabinski Lol. What's wrong with your CSS, bro?</p>
+            </div>
+            <div class="tile-secondary-content">
+              <p>Follow us on Twitter</p>
+            </div>
+          </a>
+        </li>
+        <li class="tile-person">
+          <a href="#">
+            <div class="tile-primary-content">
+              <img src="https://pbs.twimg.com/profile_images/687989817171288064/Y4PzAmSn.jpg" alt="">
+            </div>
+            <div class="tile-secondary-content">
+              <div class="tile-secondary-container">
+                <h2>Chris Grabinski</h2>
+                <p>Front-end Development</p>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="tile-client">
+          <a href="#">
+            <div class="tile-primary-content">
+              <img src="https://i.imgur.com/I6YDabc.png" alt="">
+            </div>
+          </a>
+        </li>
+            </ul>
       </body>
       </html>
       `;
-
-      const errorResponse = {
-        statusCode: 400,
-        headers: {
-          "x-custom-header" : "my custom header value"
-        },
-        body: JSON.stringify({
-          message: 'Bad request Dude',
-        }),
-      };
 
       context.succeed({
         statusCode: 200,
