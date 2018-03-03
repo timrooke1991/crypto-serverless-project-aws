@@ -11,7 +11,31 @@ var rp = require('request-promise');
        // console.log(json);
        var articleHTML = ``;
        for (var i = 0; i < 11; i++) {
-         articleHTML += `<h3>${response[i]['title']}</h3>`;
+         articleHTML +=
+         `<div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="${response[i]['guid']}" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="${response[i]['source_info']['img']}" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">${response[i]['source_info']['name']}</p>
+                  <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank"></a></p>
+                </div>
+              </div>
+
+              <div class="content">
+                ${response[i]['title']}
+              </div>
+            </div>
+          </div>`;
        }
        console.log(articleHTML);
 
