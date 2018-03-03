@@ -12,27 +12,29 @@ var rp = require('request-promise');
        var articleHTML = ``;
        for (var i = 0; i < 11; i++) {
          articleHTML +=
-         `<div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="${response[i]['img']}" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="${response[i]['source_info']['img']}" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="is-4">${response[i]['source_info']['name']}</p>
-                  <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank"></a></p>
-                </div>
+         `<div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="${response[i]['imageurl']}" alt="Placeholder image">
+                </figure>
               </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="${response[i]['source_info']['img']}" alt="${response[i]['source_info']['name']}">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="is-4">${response[i]['source_info']['name']}</p>
+                    <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank"></a></p>
+                  </div>
+                </div>
 
-              <div class="content">
-                <p class="title is-6">${response[i]['title']}</p>
+                <div class="content">
+                  <p class="title is-6">${response[i]['title']}</p>
+                </div>
               </div>
             </div>
           </div>`;
@@ -56,7 +58,6 @@ var rp = require('request-promise');
            <body class="">
               <h1>News</h1>
               <div class="columns">
-                <div class="column">
                   ${articleHTML}
                 </div>
               </div>
