@@ -30,12 +30,12 @@ var rp = require('request-promise');
                   </div>
                   <div class="media-content">
                     <p class="is-4">${response[i]['source_info']['name']}</p>
-                    <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank">${response[i]['published_on']}</a></p>
+                    <p class="subtitle is-6"></p>
                   </div>
                 </div>
 
-                <div class="content">
-                  <a href="${response[i]['url']}" target="_blank><p class="title is-6">${response[i]['title']}</p></a>
+                <div class="content ctrl-height">
+                  <a class="title is-6" href="${response[i]['url']}" target="_blank">${response[i]['title']}</a>
                 </div>
               </div>
             </div>

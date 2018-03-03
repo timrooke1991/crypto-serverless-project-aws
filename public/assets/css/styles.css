@@ -209,13 +209,25 @@ footer .footer-contents {
   top: 50%;
   width: 960px;
 }
-.masonry-list li, .masonry-list .card  {
+.masonry-list li  {
   float: left;
   height: 320px;
   overflow: hidden;
   padding: 0 1px 1px 0;
   width: 320px;
 }
+.card-list .card  {
+  float: left;
+  overflow: hidden;
+  padding: 0;
+  width: 300px;
+  margin: 0 10px
+}
+
+.ctrl-height {
+  height: 80px
+}
+
 .masonry-list li:focus a::after, .masonry-list li:hover a::after {
   opacity: 1;
   -moz-transform: translate3d(0, 0, 0);
