@@ -12,7 +12,7 @@ exports.get = function(event, context) {
   rp(`https://min-api.cryptocompare.com/data/histoday?fsym=${ticker}&tsym=USD&limit=30`)
     .then(function (response) {
       var json = JSON.parse(response);
-      var output = `
+      output = `
       <!DOCTYPE html>
       <html lang="en">
 
@@ -42,10 +42,8 @@ exports.get = function(event, context) {
           </a>
         </li>
         `;
-      return output;
-    });
-
-  rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
+      return rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`);
+    })
     .then(function (response) {
       var json = JSON.parse(response);
       console.log('json', json);
@@ -116,7 +114,8 @@ exports.get = function(event, context) {
           </body>
           </html>
           `;
-      console.log(output);
+    })
+    .then(function(output) {
       context.succeed({
         statusCode: 200,
         body: output,
