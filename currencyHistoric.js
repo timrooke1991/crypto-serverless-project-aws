@@ -10,7 +10,7 @@ exports.get = function(event, context) {
   var ticker = event.pathParameters.currency;
   var output = ``;
   rp(`https://min-api.cryptocompare.com/data/histoday?fsym=${ticker}&tsym=USD&limit=30`)
-    .then(function (response) {
+    .then(function (response, ticker) {
       var json = JSON.parse(response);
       output = `
       <!DOCTYPE html>
@@ -34,17 +34,17 @@ exports.get = function(event, context) {
             </div>
             <div class="tile-secondary-content">
                 <p><small class="sub-title-blue">1 DAY</small>${json['Data'][29]}</p>
-                <p><small class="sub-title-blue">3 DAY</small>${json['DISPLAY'][26]}</p>
-                <p><small class="sub-title-blue">7 DAY</small>${json['DISPLAY'][22]}</p>
-                <p><small class="sub-title-blue">14 DAY</small>${json['DISPLAY'][15]}</p>
-                <p><small class="sub-title-blue">30 DAY</small>${json['DISPLAY'][1]}</p>
+                <p><small class="sub-title-blue">3 DAY</small>${json['Data'][26]}</p>
+                <p><small class="sub-title-blue">7 DAY</small>${json['Data'][22]}</p>
+                <p><small class="sub-title-blue">14 DAY</small>${json['Data'][15]}</p>
+                <p><small class="sub-title-blue">30 DAY</small>${json['Data'][1]}</p>
             </div>
           </a>
         </li>
         `;
       return rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`);
     })
-    .then(function (response) {
+    .then(function (response, ticker) {
       var json = JSON.parse(response);
       console.log('json', json);
       console.log('output', output);
