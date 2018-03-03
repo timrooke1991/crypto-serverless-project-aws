@@ -11,7 +11,7 @@ var rp = require('request-promise');
        // console.log(json);
        var articleHTML = ``;
        for (var i = 0; i < 11; i++) {
-         articleHTML += `<h3>response[i][title]</h3>`;
+         articleHTML += `<h3>${response[i]['title']}</h3>`;
        }
        console.log(articleHTML);
 
