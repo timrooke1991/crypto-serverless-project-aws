@@ -303,7 +303,7 @@ footer .footer-contents {
   background-color: #71964f;
 }
 .masonry-list li.tile-facebook a::after {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAtCAYAAACqCZtVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzcwNjIyOTMwM0FFMTFFM0E3RTZGNTJCQUMxODFCMjUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzcwNjIyOTIwM0FFMTFFM0E3RTZGNTJCQUMxODFCMjUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjU4OTgxNjkwM0FBMTFFM0E3RTZGNTJCQUMxODFCMjUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjU4OTgxNkEwM0FBMTFFM0E3RTZGNTJCQUMxODFCMjUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz61fp6rAAAA6klEQVR42uyUvQrCMBRGk1rcHHQQ3XVyESdx1CdwcPLxnH0H8QGcVKiDIOJkFezqT/wiXVp6k1bJIveDAy1ND7e5uZVKKVEwFVAGr/g+As/0Ij+HqAQmYAoGoJax5gHOIAR7sBC6YgNtsFLFMzdV3AJL0BDFs/aIBxLMvpTqbCnxCPTF99lQ4vEP0jsIqD3u5ZTcwDE+bnXQBLuPnDgNB0vXAzAEXuq9Kujqa0kMSBQPApWObpDpUyixbRylbY884SgsTohVBrYoAydXFYeuxBdX4iuLE83zibnnfwWLWcxiFrOYxX8rfgswAKPozlRQdflcAAAAAElFTkSuQmCC");
+
   background-repeat: no-repeat;
   height: 45px;
   opacity: 1;
@@ -446,6 +446,30 @@ footer .footer-contents {
   font-weight: 300;
   line-height: 1.1em;
   margin: 1em 0 0;
+}
+
+h1.ticker-sym {
+  font-size: 24.5em;
+  text-align: center;
+}
+.sub-title {
+  font-size: 14px;
+  opacity: 0.7;
+  padding-right: 20px;
+}
+.sub-title-blue {
+  font-size: 14px;
+  color: #98a8d6;
+  padding-right: 20px;
+}
+.sub-title-green {
+  font-size: 14px;
+  color: #bfd2ae;
+  padding-right: 20px;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 body {

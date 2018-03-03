@@ -29,7 +29,7 @@ exports.get = function(event, context) {
         <li class="tile-case">
           <a href="#">
             <div class="tile-primary-content">
-              <h1>${json['DISPLAY'][ticker]['USD']['FROMSYMBOL']}</h1>
+              <h2>${json['RAW'][ticker]['USD']['FROMSYMBOL']}</h2>
               <p>${json['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
             </div>
             <div class="tile-secondary-content">
@@ -45,9 +45,11 @@ exports.get = function(event, context) {
               <p>${json['DISPLAY'][ticker]['USD']['MARKET']}</p>
             </div>
             <div class="tile-secondary-content">
-              <p><small>SUPPLY</small>${json['DISPLAY'][ticker]['USD']['SUPPLY']}</p>
-              <p><small>MCAP</small>${json['DISPLAY'][ticker]['USD']['MKTCAP']}</p>
-              <p><small>${json['DISPLAY'][ticker]['USD']['LASTUPDATE']}</small></p>
+              <small class="sub-title-green">SUPPLY</small>
+              <p class="no-margin">${json['DISPLAY'][ticker]['USD']['SUPPLY']}</p>
+              <small class="sub-title-green">MCAP</small>
+              <p class="no-margin">${json['DISPLAY'][ticker]['USD']['MKTCAP']}</p>
+              <small class="sub-title">${json['DISPLAY'][ticker]['USD']['LASTUPDATE']}</small>
             </div>
           </a>
         </li>
@@ -58,10 +60,10 @@ exports.get = function(event, context) {
               <p>${json['DISPLAY'][ticker]['USD']['CHANGE24HOUR']} | ${json['DISPLAY'][ticker]['USD']['CHANGEPCT24HOUR']}</p>
             </div>
             <div class="tile-secondary-content">
-              <p><small>OPEN</small>${json['DISPLAY'][ticker]['USD']['OPEN24HOUR']}</p>
-              <p><small>HIGH</small>${json['DISPLAY'][ticker]['USD']['HIGH24HOUR']}</p>
-              <p><small>LOW</small>${json['DISPLAY'][ticker]['USD']['LOW24HOUR']}</p>
-              <p><small>VOLUME</small>${json['DISPLAY'][ticker]['USD']['VOLUME24HOUR']}</p>
+              <p><small class="sub-title-blue">OPEN</small>${json['DISPLAY'][ticker]['USD']['OPEN24HOUR']}</p>
+              <p><small class="sub-title-blue">HIGH</small>${json['DISPLAY'][ticker]['USD']['HIGH24HOUR']}</p>
+              <p><small class="sub-title-blue">LOW</small>${json['DISPLAY'][ticker]['USD']['LOW24HOUR']}</p>
+              <p><small class="sub-title-blue">VOLUME</small>${json['DISPLAY'][ticker]['USD']['VOLUME24HOUR']}</p>
             </div>
           </a>
         </li>
@@ -92,7 +94,7 @@ exports.get = function(event, context) {
         <li class="tile-client">
           <a href="#">
             <div class="tile-primary-content">
-              <img src="https://i.imgur.com/I6YDabc.png" alt="">
+              <h1 class="ticker-sym">${json['RAW'][ticker]['USD']['FROMSYMBOL']}</h1>
             </div>
           </a>
         </li>
