@@ -7,7 +7,7 @@ var rp = require('request-promise');
 
    rp(`https://min-api.cryptocompare.com/data/news/?lang=EN`)
      .then(function (response) {
-       // var json = JSON.parse(response);
+       response = JSON.parse(response);
        // console.log(json);
        var articleHTML = ``;
        for (var i = 0; i < 11; i++) {
