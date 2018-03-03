@@ -9,10 +9,10 @@ exports.get = function(event, context) {
   // Grabs ticker from URL
   var ticker = event.pathParameters.currency;
   var output = ``;
-  output = rp(`https://min-api.cryptocompare.com/data/histoday?fsym=${ticker}&tsym=USD&limit=30`)
+  rp(`https://min-api.cryptocompare.com/data/histoday?fsym=${ticker}&tsym=USD&limit=30`)
     .then(function (response) {
       var json = JSON.parse(response);
-      var html = `
+      var output = `
       <!DOCTYPE html>
       <html lang="en">
 
@@ -42,7 +42,7 @@ exports.get = function(event, context) {
           </a>
         </li>
         `;
-      return html;
+      return output;
     });
 
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
