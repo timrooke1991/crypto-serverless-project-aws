@@ -38,6 +38,20 @@ Resources:
           Properties:
             Path: /{currency}
             Method: get
+  GetCurrencyTest:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: currencyHistoric.get
+      Runtime: nodejs4.3
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /historic/{currency}
+            Method: get
   GetNews:
     Type: AWS::Serverless::Function
     Properties:
