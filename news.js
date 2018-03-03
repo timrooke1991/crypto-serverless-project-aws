@@ -1,5 +1,7 @@
 'use strict';
 var fs = require('fs');
+var request = require('request');
+var rp = require('request-promise');
 
  exports.get = function(event, context) {
 
