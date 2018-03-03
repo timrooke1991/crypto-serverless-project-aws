@@ -15,7 +15,7 @@ var rp = require('request-promise');
          `<div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <img src="${response[i]['guid']}" alt="Placeholder image">
+                <img src="${response[i]['img']}" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
@@ -26,13 +26,13 @@ var rp = require('request-promise');
                   </figure>
                 </div>
                 <div class="media-content">
-                  <p class="title is-4">${response[i]['source_info']['name']}</p>
+                  <p class="is-4">${response[i]['source_info']['name']}</p>
                   <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank"></a></p>
                 </div>
               </div>
 
               <div class="content">
-                ${response[i]['title']}
+                <p class="title is-6">${response[i]['title']}</p>
               </div>
             </div>
           </div>`;
@@ -49,13 +49,17 @@ var rp = require('request-promise');
                <link href="https://s3-eu-west-2.amazonaws.com/aws-codestar-eu-west-2-190388598975-crypto-serverle-app/public/assets/css/styles.css" rel="stylesheet">
                <link href="https://s3-eu-west-2.amazonaws.com/aws-codestar-eu-west-2-190388598975-crypto-serverle-app/public/assets/css/gradients.css" rel="stylesheet">
 
-               <link href="./node_modules/bulma/css/bulma.css" rel="stylesheet">
+               <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
 
            </head>
 
            <body class="">
               <h1>News</h1>
-              ${articleHTML}
+              <div class="columns">
+                <div class="column">
+                  ${articleHTML}
+                </div>
+              </div>
            </body>
          </html>
        `;
