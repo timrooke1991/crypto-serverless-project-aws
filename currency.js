@@ -45,6 +45,7 @@ exports.get = function(event, context) {
               <p>${json['DISPLAY'][ticker]['USD']['MARKET']}</p>
             </div>
             <div class="tile-secondary-content">
+              <p></p>
               <small class="sub-title-green">SUPPLY</small>
               <p class="no-margin">${json['DISPLAY'][ticker]['USD']['SUPPLY']}</p>
               <small class="sub-title-green">MCAP</small>
@@ -57,7 +58,7 @@ exports.get = function(event, context) {
           <a href="#">
             <div class="tile-primary-content">
               <h2>24hr Trading</h2>
-              <p>${json['DISPLAY'][ticker]['USD']['CHANGE24HOUR']} | ${json['DISPLAY'][ticker]['USD']['CHANGEPCT24HOUR']}</p>
+              <p><small class="sub-title-blue">CHANGE</small>${json['DISPLAY'][ticker]['USD']['CHANGE24HOUR']} | ${json['DISPLAY'][ticker]['USD']['CHANGEPCT24HOUR']}</p>
             </div>
             <div class="tile-secondary-content">
               <p><small class="sub-title-blue">OPEN</small>${json['DISPLAY'][ticker]['USD']['OPEN24HOUR']}</p>
