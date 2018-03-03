@@ -38,3 +38,17 @@ Resources:
           Properties:
             Path: /{currency}
             Method: get
+  GetNews:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: news.get
+      Runtime: nodejs4.3
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /news
+            Method: get
