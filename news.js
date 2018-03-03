@@ -12,7 +12,7 @@ var rp = require('request-promise');
        var articleHTML = ``;
        for (var i = 0; i < 11; i++) {
          articleHTML +=
-         `<div class="column is-3">
+         `
             <div class="card">
               <div class="card-image">
               <a href="${response[i]['url']}" target="_blank>
@@ -39,7 +39,7 @@ var rp = require('request-promise');
                 </div>
               </div>
             </div>
-          </div>`;
+          `;
        }
        console.log(articleHTML);
 
@@ -59,7 +59,7 @@ var rp = require('request-promise');
 
            <body class="">
               <h1>News</h1>
-              <div class="columns">
+              <div class="masonry-list">
                   ${articleHTML}
                 </div>
               </div>

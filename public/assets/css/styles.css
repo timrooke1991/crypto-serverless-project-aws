@@ -209,7 +209,7 @@ footer .footer-contents {
   top: 50%;
   width: 960px;
 }
-.masonry-list li {
+.masonry-list li, .masonry-list .card  {
   float: left;
   height: 320px;
   overflow: hidden;
