@@ -94,7 +94,7 @@ exports.get = function(event, context) {
         <li class="tile-client">
           <a href="#">
             <div class="tile-primary-content">
-              <h1 class="ticker-sym">${json['RAW'][ticker]['USD']['FROMSYMBOL']}</h1>
+              <h1 class="ticker-sym">${json['DISPLAY'][ticker]['USD']['FROMSYMBOL']}</h1>
             </div>
           </a>
         </li>
