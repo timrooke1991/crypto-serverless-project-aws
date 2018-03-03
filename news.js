@@ -12,12 +12,14 @@ var rp = require('request-promise');
        var articleHTML = ``;
        for (var i = 0; i < 11; i++) {
          articleHTML +=
-         `<div class="column">
+         `<div class="column is-3">
             <div class="card">
               <div class="card-image">
+              <a href="${response[i]['url']}" target="_blank>
                 <figure class="image is-4by3">
                   <img src="${response[i]['imageurl']}" alt="Placeholder image">
                 </figure>
+              </a>
               </div>
               <div class="card-content">
                 <div class="media">
@@ -28,12 +30,12 @@ var rp = require('request-promise');
                   </div>
                   <div class="media-content">
                     <p class="is-4">${response[i]['source_info']['name']}</p>
-                    <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank"></a></p>
+                    <p class="subtitle is-6"><a href="${response[i]['published_on']}" target="_blank">${response[i]['published_on']}</a></p>
                   </div>
                 </div>
 
                 <div class="content">
-                  <p class="title is-6">${response[i]['title']}</p>
+                  <a href="${response[i]['url']}" target="_blank><p class="title is-6">${response[i]['title']}</p></a>
                 </div>
               </div>
             </div>
