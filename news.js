@@ -2,7 +2,6 @@
 var fs = require('fs');
 var request = require('request');
 var rp = require('request-promise');
-import 'bulma/css/bulma.css';
 
  exports.get = function(event, context) {
 
@@ -49,6 +48,9 @@ import 'bulma/css/bulma.css';
                <meta name="description" content="" />
                <link href="https://s3-eu-west-2.amazonaws.com/aws-codestar-eu-west-2-190388598975-crypto-serverle-app/public/assets/css/styles.css" rel="stylesheet">
                <link href="https://s3-eu-west-2.amazonaws.com/aws-codestar-eu-west-2-190388598975-crypto-serverle-app/public/assets/css/gradients.css" rel="stylesheet">
+
+               <link href="./node_modules/bulma/css/bulma.css" rel="stylesheet">
+
            </head>
 
            <body class="">
