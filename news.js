@@ -5,7 +5,14 @@ var fs = require('fs');
 
    rp(`https://min-api.cryptocompare.com/data/news/?lang=EN`)
      .then(function (response) {
-       var json = JSON.parse(response);
+       // var json = JSON.parse(response);
+       // console.log(json);
+       var articleHTML = ``;
+       for (var i = 0; i < 11; i++) {
+         articleHTML += `<h3>response[i][title]</h3>`;
+       }
+       console.log(articleHTML);
+
        var html = `
          <!DOCTYPE html>
          <html lang="en">
@@ -18,14 +25,16 @@ var fs = require('fs');
            </head>
 
            <body class="">
-
+              <h1>News</h1>
+              ${articleHTML}
            </body>
          </html>
        `;
-
+       console.log(html);
        return html;
      })
      .then(function(html) {
+       console.log(html);
        context.succeed({
          statusCode: 200,
          body: html,
