@@ -8,8 +8,8 @@ exports.get = function(event, context) {
 
   // Grabs ticker from URL
   var ticker = event.pathParameters.currency;
-
-  rp(`https://min-api.cryptocompare.com/data/histoday?fsym=${ticker}&tsym=USD&limit=30`)
+  var output = ``;
+  output = rp(`https://min-api.cryptocompare.com/data/histoday?fsym=${ticker}&tsym=USD&limit=30`)
     .then(function (response) {
       var json = JSON.parse(response);
       var html = `
@@ -43,11 +43,14 @@ exports.get = function(event, context) {
         </li>
         `;
       return html;
-    })
+    });
+
   rp(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ticker}&tsyms=USD`)
-        .then(function (response, html) {
-          var json = JSON.parse(response);
-          html += `
+    .then(function (response) {
+      var json = JSON.parse(response);
+      console.log('json', json);
+      console.log('output', output);
+      output += `
             <li class="tile-job">
               <a href="#">
                 <div class="tile-primary-content">
@@ -113,13 +116,10 @@ exports.get = function(event, context) {
           </body>
           </html>
           `;
-          return html;
-        })
-    .then(function(html) {
-      console.log(html);
+      console.log(output);
       context.succeed({
         statusCode: 200,
-        body: html,
+        body: output,
         headers: {'Content-Type': 'text/html'}
       });
     })
