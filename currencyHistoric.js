@@ -68,7 +68,8 @@ exports.get = function(event, context) {
         <a href="#">
           <div class="tile-primary-content">
             <h2>24hr Trading</h2>
-            <p><small class="sub-title-blue">CHANGE</small>${json[1]['DISPLAY'][ticker]['USD']['CHANGE24HOUR']} | ${json[1]['DISPLAY'][ticker]['USD']['CHANGEPCT24HOUR']}</p>
+            <p><small class="sub-title-blue">CHANGE $</small>${json[1]['DISPLAY'][ticker]['USD']['CHANGE24HOUR']}</p>
+            <p><small class="sub-title-blue">CHANGE %</small>${json[1]['DISPLAY'][ticker]['USD']['CHANGEPCT24HOUR']}%</p>
           </div>
           <div class="tile-secondary-content">
             <p><small class="sub-title-blue">OPEN</small>${json[1]['DISPLAY'][ticker]['USD']['OPEN24HOUR']}</p>
