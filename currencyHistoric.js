@@ -1,7 +1,5 @@
 'use strict';
-var fs = require('fs');
-var Promise = require("bluebird");
-var request = require('request');
+var Promise = require('bluebird');
 var rp = require('request-promise');
 
 
@@ -42,11 +40,11 @@ exports.get = function(event, context) {
             <p>${json[1]['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
           </div>
           <div class="tile-secondary-content">
-              <p><small class="sub-title-blue">1 DAY</small>${json[0]['Data'][29]}</p>
-              <p><small class="sub-title-blue">3 DAY</small>${json[0]['Data'][26]}</p>
-              <p><small class="sub-title-blue">7 DAY</small>${json[0]['Data'][22]}</p>
-              <p><small class="sub-title-blue">14 DAY</small>${json[0]['Data'][15]}</p>
-              <p><small class="sub-title-blue">30 DAY</small>${json[0]['Data'][1]}</p>
+              <p><small class="sub-title-blue">1 DAY</small>${json[0]['Data'][29]['close']}</p>
+              <p><small class="sub-title-blue">3 DAY</small>${json[0]['Data'][26]['close']}</p>
+              <p><small class="sub-title-blue">7 DAY</small>${json[0]['Data'][22]['close']}</p>
+              <p><small class="sub-title-blue">14 DAY</small>${json[0]['Data'][15]['close']}</p>
+              <p><small class="sub-title-blue">30 DAY</small>${json[0]['Data'][1]['close']}</p>
           </div>
         </a>
       </li>
