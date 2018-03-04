@@ -2,6 +2,7 @@
 var fs = require('fs');
 var request = require('request');
 var rp = require('request-promise');
+var moment = require('moment');
 
  exports.get = function(event, context) {
 
@@ -30,7 +31,7 @@ var rp = require('request-promise');
                   </div>
                   <div class="media-content">
                     <p class="is-4">${response[i]['source_info']['name']}</p>
-                    <p class="subtitle is-6"></p>
+                    <p class="subtitle is-6">${moment.unix(response[i]['published_on']).fromNow()}</p>
                   </div>
                 </div>
 

@@ -4,6 +4,7 @@
   "description": "Welcome to the AWS CodeStar sample web application ==================================================",
   "main": "index.js",
   "dependencies": {
+    "moment": "^2.21.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "serverless-offline": "^3.18.0"
