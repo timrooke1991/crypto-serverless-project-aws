@@ -37,14 +37,24 @@ exports.get = function(event, context) {
         <a href="#">
           <div class="tile-primary-content">
             <h2>PERFORMANCE</h2>
-            <p>${json[1]['RAW'][ticker]['USD']['FROMSYMBOL']}</p>
+            <p><small class="sub-title-blue">1 DAY</small>${
+              (json[0]['Data'][29]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100 }
+            </p>
+            <p><small class="sub-title-blue">3 DAY</small>
+              ${(json[0]['Data'][26]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100 }
+            </p>
+            <p><small class="sub-title-blue">7 DAY</small>
+              ${(json[0]['Data'][22]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100 }
+            </p>
+            <p><small class="sub-title-blue">30 DAY</small>
+              ${(json[0]['Data'][1]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100 }
+            </p>
           </div>
           <div class="tile-secondary-content">
-              <p><small class="sub-title-blue">1 DAY</small>${json[0]['Data'][29]['close']}</p>
-              <p><small class="sub-title-blue">3 DAY</small>${json[0]['Data'][26]['close']}</p>
-              <p><small class="sub-title-blue">7 DAY</small>${json[0]['Data'][22]['close']}</p>
-              <p><small class="sub-title-blue">14 DAY</small>${json[0]['Data'][15]['close']}</p>
-              <p><small class="sub-title-blue">30 DAY</small>${json[0]['Data'][1]['close']}</p>
+              <p><small class="sub-title-blue">1 DAY</small>${json[0]['Data'][29]['open']}</p>
+              <p><small class="sub-title-blue">3 DAY</small>${json[0]['Data'][26]['open']}</p>
+              <p><small class="sub-title-blue">7 DAY</small>${json[0]['Data'][22]['open']}</p>
+              <p><small class="sub-title-blue">30 DAY</small>${json[0]['Data'][1]['open']}</p>
           </div>
         </a>
       </li>
