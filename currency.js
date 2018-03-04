@@ -33,7 +33,7 @@ exports.get = function(event, context) {
 
     <body class="">
     <ul class="masonry-list">
-      <li class="tile-case">
+      <li class="tile-facebook">
         <a href="#">
           <div class="tile-primary-content">
             <h2>PERFORMANCE</h2>
