@@ -14,7 +14,7 @@ var moment = require('moment');
        var tagHTML = ``;
        for (var i = 0; i < 11; i++) {
          response[i]['categories'].split('|').forEach((tag) => {
-            tagHTML += `<span class="tag">${tag}</span>`;
+           tagHTML += `<span class="tag">${tag}</span>`;
          });
          articleHTML +=
          `
@@ -44,13 +44,12 @@ var moment = require('moment');
                 </div>
 
                 <div>
-                  ${}
+                  ${tagHTML}
                 </div>
               </div>
             </div>
           `;
        }
-       console.log(articleHTML);
 
        var html = `
          <!DOCTYPE html>
