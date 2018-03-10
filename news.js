@@ -11,7 +11,11 @@ var moment = require('moment');
        response = JSON.parse(response);
        // console.log(json);
        var articleHTML = ``;
+       var tagHTML = ``;
        for (var i = 0; i < 11; i++) {
+         response[i]['categories'].split('|').forEach((tag) => {
+            tagHTML += `<span class="tag">${tag}</span>`;
+         });
          articleHTML +=
          `
             <div class="card">
@@ -37,6 +41,10 @@ var moment = require('moment');
 
                 <div class="content ctrl-height">
                   <a class="title is-6" href="${response[i]['url']}" target="_blank">${response[i]['title']}</a>
+                </div>
+
+                <div>
+                  ${}
                 </div>
               </div>
             </div>
