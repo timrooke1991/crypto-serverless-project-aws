@@ -9,8 +9,9 @@ exports.get = function(event, context) {
        response = JSON.parse(response);
        // console.log(json);
        var articleHTML = ``;
+       var tagHTML = ``;
        for (var i = 0; i < 11; i++) {
-         var tagHTML = ``;
+         tagHTML = ``;
          response[i]['categories'].split('|').forEach((tag) => {
            tagHTML += `<span class="tag">${tag}</span>`;
          });
@@ -41,7 +42,7 @@ exports.get = function(event, context) {
                   <a class="title is-6" href="${response[i]['url']}" target="_blank">${response[i]['title']}</a>
                 </div>
 
-                <div>
+                <div style="height: 30px">
                   ${tagHTML}
                 </div>
               </div>
@@ -63,7 +64,7 @@ exports.get = function(event, context) {
            </head>
 
            <body class="">
-              <h1>News</h1>
+              <h1 class="news">News</h1>
               <div class="card-list">
                   ${articleHTML}
                 </div>

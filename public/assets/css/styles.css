@@ -35,7 +35,7 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
-h1 {
+h1.news {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
   padding: 10px;
@@ -506,7 +506,7 @@ h1.ticker-sym {
 }
 
 body, html {
-  background-color: #4a4a4a;
+  background-color: #4a4a4a !important;
 }
 
 ul {
