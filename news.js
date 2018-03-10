@@ -1,12 +1,10 @@
 'use strict';
-var fs = require('fs');
-var request = require('request');
 var rp = require('request-promise');
 var moment = require('moment');
 
- exports.get = function(event, context) {
+exports.get = function(event, context) {
 
-   rp(`https://min-api.cryptocompare.com/data/news/?lang=EN`)
+  rp(`https://min-api.cryptocompare.com/data/news/?lang=EN`)
      .then(function (response) {
        response = JSON.parse(response);
        // console.log(json);
@@ -87,4 +85,4 @@ var moment = require('moment');
      .catch(function (err) {
        console.log('error: ', err);
      });
- };
+};
