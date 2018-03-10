@@ -9,8 +9,8 @@ exports.get = function(event, context) {
        response = JSON.parse(response);
        // console.log(json);
        var articleHTML = ``;
-       var tagHTML = ``;
        for (var i = 0; i < 11; i++) {
+         var tagHTML = ``;
          response[i]['categories'].split('|').forEach((tag) => {
            tagHTML += `<span class="tag">${tag}</span>`;
          });
