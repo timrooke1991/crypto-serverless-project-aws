@@ -1,42 +1,43 @@
-Welcome to the AWS CodeStar sample web application
-==================================================
+# Serverless Crypto App
 
-This sample code helps get you started with a simple Node.js web service deployed by AWS CloudFormation to AWS Lambda and Amazon API Gateway.
+#### Installation and setup
 
-What's Here
------------
+- Download or clone the repo
+- [GitHub link](https://github.com/timrooke1991/Crypto-Serverless-Project)
 
-This sample includes:
+This Cryptocurrency app is available to view and register [here.](https://6t1yw5amy5.execute-api.eu-west-2.amazonaws.com/Prod/)
 
-* README.md - this file - needs updating
-* buildspec.yml - this file is used by AWS CodeBuild to package your
-  application for deployment to AWS Lambda
-* index.js - this file contains the sample Node.js code for the web service
-* template.yml - this file contains the AWS Serverless Application Model (AWS SAM) used
-  by AWS CloudFormation to deploy your application to AWS Lambda and Amazon API
-  Gateway.
+## Project Description
 
+This site can be used to get the information including price, supply and trading information for any Cryptocurrency. I build this site while studying for my AWS Developer Associate exam to become more comfortable with the AWS ecosystem. It uses a [cryptocurrency API](min-api.cryptocompare.com) to retrieve price information and the latest news about currencies.
 
-What Do I Do Next?
-------------------
+### [](https://github.com/timrooke1991/Crypto-Serverless-Project#features)Features
 
-If you have checked out a local copy of your repository you can start making
-changes to the sample code.  We suggest making a small change to index.js first,
-so you can see how changes pushed to your project's repository are automatically
-picked up by your project pipeline and deployed to AWS Lambda and Amazon API Gateway.
-(You can watch the pipeline progress on your AWS CodeStar project dashboard.)
-Once you've seen how that works, start developing your own code, and have fun!
+The app allows you to search the cryptocurrency ticket, e.g. BTC, ETH, LTC in the URL to retrieve information about a particular currency. I would prefer to update this to be a query string and to use a search box on the home page. This should be done soon. 
 
-Learn more about AWS Serverless Application Model (AWS SAM) and how it works here:
-https://github.com/awslabs/serverless-application-model/blob/master/HOWTO.md
+### [](https://github.com/timrooke1991/Crypto-Serverless-Project#technologies-used)Technologies used
 
-AWS Lambda Developer Guide:
-http://docs.aws.amazon.com/lambda/latest/dg/deploying-lambda-apps.html
+The list of the software and languages used in the project, for example:
 
-Learn more about AWS CodeStar by reading the user guide, and post questions and
-comments about AWS CodeStar on our forum.
+- HTML5
+- CSS
+- JavaScript
+- Bulma
+- node.js
+- AWS CodeStar
+- AWS API Gateway
+- AWS Lambda
+- AWS CloudWatch
+- Git
+- Github
 
-AWS CodeStar User Guide:
-http://docs.aws.amazon.com/codestar/latest/userguide/welcome.html
+### [](https://github.com/timrooke1991/Crypto-Serverless-Project#challenges-faced)What I learned
 
-AWS CodeStar Forum: https://forums.aws.amazon.com/forum.jspa?forumID=248
+I build this site while studying for my AWS Developer Associate exam to become more comfortable with the AWS ecosystem. It taught me a lot about how AWS resources work together. This was my first 'serverless' projects. Experimenting with Functions as a Service was interesting. It required me think more about what my specific functions were doing.
+
+### [](https://github.com/timrooke1991/Crypto-Serverless-Project#rounding-it-off)Rounding it off
+
+Improvements that I would like to make to the project in the future would be:
+
+- Update the search for currencies to be a query string
+- Style the home page properly with a nav bar and perhaps the highest volume currencies for that day
