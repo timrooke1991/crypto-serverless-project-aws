@@ -37,17 +37,16 @@ exports.get = function(event, context) {
         <a href="#">
           <div class="tile-primary-content">
             <h2>PERFORMANCE</h2>
-            <p><small class="sub-title-blue">1 DAY</small>${
-              parseFloat((json[0]['Data'][29]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100 ).toFixed(2)}%
+            <p><small class="sub-title-blue">1 DAY</small>${parseFloat((json[0]['Data'][29]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2)}%
             </p>
             <p><small class="sub-title-blue">3 DAY</small>
-              ${parseFloat((json[0]['Data'][26]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2) }%
+              ${parseFloat((json[0]['Data'][26]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2)}%
             </p>
             <p><small class="sub-title-blue">7 DAY</small>
-              ${parseFloat((json[0]['Data'][22]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2) }%
+              ${parseFloat((json[0]['Data'][22]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2)}%
             </p>
             <p><small class="sub-title-blue">30 DAY</small>
-              ${parseFloat((json[0]['Data'][1]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2) }%
+              ${parseFloat((json[0]['Data'][1]['open'] - json[0]['Data'][30]['close']) / json[0]['Data'][30]['close'] * 100).toFixed(2)}%
             </p>
           </div>
           <div class="tile-secondary-content">
@@ -93,7 +92,7 @@ exports.get = function(event, context) {
         <a href="https://twitter.com/chrisgrabinski">
           <div class="tile-primary-content">
             <h2>Twitter</h2>
-            <p>@chrisgrabinski Lol. What's wrong with your CSS, bro?</p>
+            <p>Add relevent tweets in here</p>
           </div>
           <div class="tile-secondary-content">
             <p>Follow us on Twitter</p>
@@ -107,8 +106,8 @@ exports.get = function(event, context) {
           </div>
           <div class="tile-secondary-content">
             <div class="tile-secondary-container">
-              <h2>Chris Grabinski</h2>
-              <p>Front-end Development</p>
+              <p>created by</p>
+              <h2>Tim Rooke</h2>
             </div>
           </div>
         </a>
